@@ -94,9 +94,15 @@ class _HomePageState extends State<HomePage>{
                     Expanded(
                       child: Align(
                         alignment: Alignment.bottomRight,
-                        child: CircleAvatar(
-                          radius: 20,
-                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Time",style: TextStyle(fontSize: 8, color: Colors.grey),),
+                            CircleAvatar(
+                              radius: 8,
+                            ),
+                          ],
+                        )
                       ),
                     )
 
@@ -105,9 +111,12 @@ class _HomePageState extends State<HomePage>{
             ),
           ),
         ),
+        
       ],
     );
   }
+
+
 
   @override
   Widget build(BuildContext context){
