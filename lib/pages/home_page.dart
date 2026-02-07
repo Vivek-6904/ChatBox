@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:test_project/pages/chat_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -63,55 +64,63 @@ class _HomePageState extends State<HomePage>{
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40)
           ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: SizedBox(
-                height: 55,
-                child: Row(
-                  children: [
+          child: InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => ChatPage(),),
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: SizedBox(
+                  height: 55,
+                  child: Row(
+                    children: [
 
-                    CircleAvatar(
-                      radius: 20,
-                    ),
-                    
-                    SizedBox(width: 8,),
-                    
-                    Expanded(
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            
-                            Text("name", style: TextStyle(fontSize: 15, color: Colors.white),),
-                            Text("time", style: TextStyle(fontSize: 13, color: Colors.grey),)
-                            
-                          ],
+                      CircleAvatar(
+                        radius: 20,
+                      ),
+
+                      SizedBox(width: 8,),
+
+                      Expanded(
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+
+                                Text("name", style: TextStyle(fontSize: 15, color: Colors.white),),
+                                Text("time", style: TextStyle(fontSize: 13, color: Colors.grey),)
+
+                              ],
+                            ),
+                          )
+                      ),
+
+                      Expanded(
+                        child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Time",style: TextStyle(fontSize: 8, color: Colors.grey),),
+                                CircleAvatar(
+                                  radius: 8,
+                                ),
+                              ],
+                            )
                         ),
                       )
-                    ),
 
-                    Expanded(
-                      child: Align(
-                        alignment: Alignment.bottomRight,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Time",style: TextStyle(fontSize: 8, color: Colors.grey),),
-                            CircleAvatar(
-                              radius: 8,
-                            ),
-                          ],
-                        )
-                      ),
-                    )
-
-                  ],
-                )
+                    ],
+                  )
+              ),
             ),
           ),
         ),
-        
+
       ],
     );
   }
