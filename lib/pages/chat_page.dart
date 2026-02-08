@@ -42,9 +42,54 @@ class _ChatPageState extends State<ChatPage> {
       height: double.infinity,
       width: double.infinity,
       color: Colors.grey,
+      padding: EdgeInsets.all(10),
       child: Column(
         children: [
-          
+          Expanded(child: Align(
+            alignment: Alignment.bottomLeft,
+            child: Card(
+              elevation: 26,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(26)
+              ),
+              child: Container(
+                height: 56,
+                padding: EdgeInsets.all(10),
+                child: Row(
+
+                  children: [
+
+                    CircleAvatar(
+                      radius: 20,
+                    ),
+
+                    SizedBox(width: 20,),
+
+                    Expanded(
+                      child: TextField(
+                        textAlignVertical: TextAlignVertical.center,
+                        decoration: InputDecoration(
+                          hintText: "Enter Text",
+                          border: InputBorder.none,
+                          isDense: true,
+                        ),
+                      ),
+                    ),
+
+                    SizedBox(width: 20,),
+
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: CircleAvatar(
+                        radius: 20,
+                      ),
+                    )
+
+                  ],
+                ),
+              )
+            )
+          ))
         ],
       ),
     );
